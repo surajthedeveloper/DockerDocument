@@ -1,7 +1,7 @@
 Docker Commands
 ===============
 
-```docker --versionv```
+```docker --version```
 
 ```docker login``` 															=> Login with username and password
 
@@ -17,9 +17,15 @@ Docker Commands
 
 ```docker run <IMAGE_NAME>```
 
+```docker run <IMAGE_NAME> --name <CONTAINER_NAME>```
+
+```docker run -it <IMAGE_NAME>```		=> Interactive mode
+
+```docker run -dt <IMAGE_NAME>```		=> detached mode
+
 ```docker run -p [actual-port]:[container-port] <IMAGE_NAME>``` 				=> Binding port
 
-```docker run -d -p [local-port]:[docker-port] <IMAGE_NAME>``` 			    => Deattach mode 
+```docker run -d -p [local-port]:[docker-port] <IMAGE_NAME>``` 			    => detached mode 
 
 ```docker run -d -p [local-port]:[docker-port] --restart=always <IMAGE_NAME>``` 			    
 																		=> On restart of docker the container will be restared if --restart=always is mentioned
@@ -30,7 +36,7 @@ Docker Commands
 
 ```docker container```
 
-```docker container ls```			= docker ps
+```docker container ls```	or ```docker ps```
 
 ```docker container ls -a```
 
@@ -63,6 +69,9 @@ Docker Commands
 ```docker sytem df -v``` 														=> to show docker disk usage
 
 
+```docker commit <container name> >imagename>:<imageversion>```	
+	=> to create image from container
+
 Docker Compose
 ==============
 ```docker-compose -v```
@@ -80,4 +89,6 @@ Docker Compose
 
 Docker Image Tagging
 ====================
+```docker tag <image>:<tag> <account-name>/<image>:<tage>```
+
 ```docker tag microservice:1.0.0 jannusuraj/microservice:1.0.0```
